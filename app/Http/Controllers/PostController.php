@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
+use App\Models\Post;
+use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-
-  public function index()
-  {
+    public function index()
+    {
+      // $posts = Post::get();
+      $posts = Post::get();
     
-    $posts = DB::table("post")->get();
-
-    return view("maps", ["posts" => $posts]);
-  }
+      return view("maps", ["posts" => $posts]);
+    }
 }

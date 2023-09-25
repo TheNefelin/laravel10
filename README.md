@@ -1,30 +1,51 @@
 # Laravel 10 php, First Proyect
 
-## Apps
+### Apps
 - Laragon
 - php < v8
 - 7z
 - MySQL workbench
 
-## config vscode
+### config vscode
 - File -> Preferences -> Settings -> Extensions -> php -> Edit in settings.json
 - "php.validate.executablePath": "C:/..ruta_php_version.../php.exe"
 
+### Controller creation 
+- Folder: app -> Http -> Controllers
+```
+php artisan make:controller TableNameController   
+```
+
+### Creating Model & Migrations
+- Folder: app -> Models & database -> migrations
+```
+php artisan make:model TableName -m
+```
+
+### Migrate Table to Database
+```
+php artisan migrate
+```
+
+or 
+
+# Other
+
+### ORM Elocuent 
+- Folder: app -> Models 
+```
+php artisan make:model TableName
+```
+
+and
+
 ### Table creation & Database migrations 
-Folder: database -> migrations
+- Folder: database -> migrations
 ```
 php artisan make:migration create_name_table //create table for migrations
 php artisan migrate // migrate all tables to database
 php artisan migrate:rollback // delete table last batch
 php artisan migrate:fresh //update all table deletin the data
-```
-
-or
-
-### ORM Elocuent 
-Folder: app -> models 
-```
-
 ```
 
 # Laravel Docs.

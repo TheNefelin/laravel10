@@ -6,7 +6,7 @@
 	<ul>
 		@foreach ($posts as $post)
 			<li key={{ $post->id }}>
-				{{ $post->nombre }}
+				<a href="/blog/{{ $post->id }}"> {{ $post->nombre }} </a>
 			</li>
 		@endforeach
 	</ul>

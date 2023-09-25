@@ -6,18 +6,23 @@
 - 7z
 - MySQL workbench
 
-### config vscode
+### Config VScode
 - File -> Preferences -> Settings -> Extensions -> php -> Edit in settings.json
 - "php.validate.executablePath": "C:/..ruta_php_version.../php.exe"
 
-### Controller creation 
+### Important Folder
 - Folder: app -> Http -> Controllers
+- Folder: app -> Models 
+- Folder: database -> migrations
+- Folder: resources -> views
+- Folder: resources -> routes
+
+### Creating Controller 
 ```
 php artisan make:controller TableNameController   
 ```
 
 ### Creating Model & Migrations
-- Folder: app -> Models & database -> migrations
 ```
 php artisan make:model TableName -m
 ```

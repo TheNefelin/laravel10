@@ -7,11 +7,14 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index()
-    {
-      // $posts = Post::get();
-      $posts = Post::get();
-    
-      return view("maps", ["posts" => $posts]);
-    }
+  public function index()
+  {
+    $posts = Post::get();
+    return view("posts.index", ["posts" => $posts]);
+  }
+
+  public function show(Post $post)
+  {
+    return  view("posts.show", ["post" => $post]);
+  }
 }

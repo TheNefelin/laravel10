@@ -6,7 +6,10 @@
 	<ul>
 		@foreach ($posts as $post)
 			<li key={{ $post->id }}>
-				<a href="/blog/{{ $post->id }}"> {{ $post->nombre }} </a>
+				<a 
+          href="{{ route('posts.show', $post->id) }}"> 
+          {{ $post->nombre }} 
+        </a>
 			</li>
 		@endforeach
 	</ul>

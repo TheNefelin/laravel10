@@ -19,4 +19,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::view("/", "welcome")->name("home");
-Route::get("/maps", [PostController::class, "index"])->name("maps");
+
+Route::get("/blog", [PostController::class, "index"])->name("posts.index");
+
+Route::get("/blog/{post}", [PostController::class, "show"])->name("posts.show");

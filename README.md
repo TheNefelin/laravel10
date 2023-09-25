@@ -1,16 +1,16 @@
 # Laravel 10 php, First Proyect
 
-* apps
+## Apps
 - Laragon
 - php < v8
 - 7z
 - MySQL workbench
 
-* config vscode
-File -> Preferences -> Settings -> Extensions -> php -> Edit in settings.json
-"php.validate.executablePath": "C:/..ruta_php_version.../php.exe"
+## config vscode
+- File -> Preferences -> Settings -> Extensions -> php -> Edit in settings.json
+- "php.validate.executablePath": "C:/..ruta_php_version.../php.exe"
 
-* Table creation & Database migrations 
+### Table creation & Database migrations 
 Folder: database -> migrations
 ```
 php artisan make:migration create_name_table //create table for migrations
@@ -21,13 +21,13 @@ php artisan migrate:fresh //update all table deletin the data
 
 or
 
-* ORM Elocuent 
+### ORM Elocuent 
 Folder: app -> models 
 ```
 
 ```
 
-<br>
+# Laravel Docs.
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>

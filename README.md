@@ -12,6 +12,7 @@
 
 ### Important Folder
 - Folder: app -> Http -> Controllers
+- Folder: app -> Http -> Requests
 - Folder: app -> Models 
 - Folder: database -> migrations
 - Folder: resources -> views
@@ -22,6 +23,7 @@
 ### Other
 ```
 php artisan route:list
+php artisan route:list --path=ViewNameCRUD
 ```
 
 ### Creating Controller 
@@ -40,6 +42,32 @@ php artisan migrate // migrate all tables to database
 php artisan migrate:rollback // delete table last batch
 php artisan migrate:fresh //update all table deletin the data
 ```
+
+### For Validate Form Request
+```
+php artisan make:request SaveTableNameRequest
+```
+
+# Vite & Tailwind
+- File: vite.config.js
+- Folder: resources -> css & js
+
+<a href="https://tailwindcss.com/docs/guides/laravel">Tailwind for config Laravel</a>
+
+```
+node -v
+npm -v
+npm install
+npm run dev
+ctrl + c
+npm run build
+npm uninstall bootstrap
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+npm run dev
+```
+- Folder: node_modules
+- Add @vite(['resources/css/app.css', 'resources/js/app.js']) to Layout in views
 
 # Laravel Docs.
 

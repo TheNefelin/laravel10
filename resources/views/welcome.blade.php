@@ -4,6 +4,7 @@
   <input type="text" name="" id="" placeholder="latitud">
   <input type="text" name="" id="" placeholder="longitud">
   <button type="submit">Enviar</button>
+  
   <iframe 
     src="https://maps.google.com/maps?q=-33.036,-71.62963&output=embed" 
     frameborder="0"

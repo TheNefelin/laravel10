@@ -1,28 +1,14 @@
 <x-layouts.app title="Blog" meta_description="Meta Blog Create">
 
-  <h1>CREATE</h1>
+  <h1>Create Form</h1>
+  @dump($post->toArray())
 
-  <form action="{{ route('post.store') }}" method="POST">
+  <form action="{{ route('posts.store') }}" method="POST">
     @csrf
-    <label for="nombre">
-      Nombre <br>
-      <input type="text" name="nombre" id="nombre" value="{{ old('nombre') }}">
-      @error("nombre")
-        <br>
-        <small style="color: red">{{ $message }}</small>
-      @enderror
-    </label>
+    @include("posts.form")
+
     <br>
-    <label for="apellido">
-      Apellido <br>
-      <input type="text" name="apellido" id="apellido" value="{{ old('apellido') }}">
-      @error("apellido")
-        <br>
-        <small style="color: red">{{ $message }}</small>
-      @enderror
-    </label>
-    <br>
-    <input type="submit" value="Enviar">
+    <input type="submit" value="Crear">
   </form>
 
   <a href="{{ route('posts.index') }}">Regresar</a>

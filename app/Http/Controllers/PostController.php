@@ -2,44 +2,55 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SavePostRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-  public function index()
-  {
+  public function index(){
     $posts = Post::get();
     return view("posts.index", ["posts" => $posts]);
   }
 
-  public function show(Post $post)
-  {
+  public function show(Post $post){
     return  view("posts.show", ["post" => $post]);
   }
 
-  public function create() 
-  {
-    return view("posts.create");
+  // Form crear
+  public function create() {
+    return view("posts.create", ["post" => new Post]);
   }
 
-  public function store(Request $request) 
-  {
-    $request->validate([
-      "nombre" => ["required", "min:2"],
-      "apellido" => ["required", "min:2"]
-    ]);
+  public function store(SavePostRequest $request) {
+    // SavePostRequest manda los datos del Form a Validacion en el archivo Request
+    // Instancia nueva para insert segun la Clase Post
+    Post::create($request->validated());
 
-    $posts = new Post;
+    // Retorna a la vista Index de Post retornando un mensaje
+    return to_route("posts.index")->with("status", "Datos Guardado Correctamente");
+  }
 
-    $posts->nombre = $request->input("nombre");
-    $posts->apellido = $request->input("apellido");
+  // Form Modificar
+  public function edit(Post $post){
+    return  view("posts.edit", ["post" => $post]);
+  }
 
-    $posts->save();
+  public function update(SavePostRequest $request, Post $post) {
+    // SavePostRequest manda los datos del Form a Validacion en el archivo Request
+    // Modifica los datos
+    $post->update($request->validated());
 
-    session()->flash("status", "Datos Guardado Correctamente");
+    // Retorna a la vista Show de Post retornando un mensaje
+    return to_route("posts.show", $post)->with("status", "Datos Modificados Correctamente");
+  }
 
-    return to_route("posts.index");
+  public function destroy(Post $post){
+    // Elimina el post solicitado
+    $post->delete();
+
+    // Retorna a la vista Show de Post retornando un mensaje
+    return to_route("posts.index")->with("status", "Datos Eliminados Correctamente");
   }
 }
 

@@ -2,7 +2,7 @@
 
     <h1>{{ $post->nombre }}</h1>
 
-    <p>{{ $post->body }}</p>
+    <p>{{ $post->apellido }}</p>
 
     <a href="{{ route('posts.index') }}">Regresar</a>
 

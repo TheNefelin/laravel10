@@ -17,4 +17,29 @@ class PostController extends Controller
   {
     return  view("posts.show", ["post" => $post]);
   }
+
+  public function create() 
+  {
+    return view("posts.create");
+  }
+
+  public function store(Request $request) 
+  {
+    $request->validate([
+      "nombre" => ["required", "min:2"],
+      "apellido" => ["required", "min:2"]
+    ]);
+
+    $posts = new Post;
+
+    $posts->nombre = $request->input("nombre");
+    $posts->apellido = $request->input("apellido");
+
+    $posts->save();
+
+    session()->flash("status", "Datos Guardado Correctamente");
+
+    return to_route("posts.index");
+  }
 }
+

@@ -1,4 +1,4 @@
-<x-layouts.app title="Maps" meta_description="Meta Show">
+<x-layouts.app title="Blog" meta_description="Meta Blog Show">
 
     <h1>{{ $post->nombre }}</h1>
 

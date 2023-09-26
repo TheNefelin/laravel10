@@ -19,6 +19,11 @@
 
 # ORM Elocuent 
 
+### Other
+```
+php artisan route:list
+```
+
 ### Creating Controller 
 ```
 php artisan make:controller TableNameController   

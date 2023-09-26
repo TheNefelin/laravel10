@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string("nombre");
+            $table->string("apellido");
             $table->timestamps();
         });
     }

@@ -1,7 +1,9 @@
-<x-layouts.app title="Maps" meta_description="Meta Maps">
+<x-layouts.app title="Blog" meta_description="Meta Blog Index">
 
-	<h1>MAPAS</h1>
+	<h1>BLOGS</h1>
 	@dump($posts)
+
+  <a href="{{ route('posts.create') }}">Create new Post</a>
 
 	<ul>
 		@foreach ($posts as $post)

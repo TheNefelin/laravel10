@@ -1,6 +1,7 @@
 <x-layouts.app title="Home" meta_description="Meta Home">
 
-  <h1>Mapa</h1>
+  <h1 class="my-4 font-bold text-3xl text-center text-sky-600 dark:text-sky-500">Inicio</h1>
+  
   <input type="text" name="" id="" placeholder="latitud">
   <input type="text" name="" id="" placeholder="longitud">
   <button type="submit">Enviar</button>

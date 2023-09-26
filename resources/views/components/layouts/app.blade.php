@@ -9,12 +9,12 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
+<body class=" bg-blue-50">
 
     <x-layouts.navegation />
 
     @if (session('status'))
-        <div>
+        <div class=" bg-lime-600 text-white p-2">
             {{ session('status') }}
         </div>
     @endif

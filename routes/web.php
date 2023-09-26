@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthSessionController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,4 +36,9 @@ Route::resource("blog", PostController::class, [
   "parameters" => ["blog" => "post"],
 ]);
 
-Route::view("/login", "login")->name("login");
+
+
+Route::view("/viajes", "viajes.index")->name("viajes.index")->middleware("viajes.index");
+
+Route::view("/login", "auth.login")->name("login");
+Route::post("/login", [AuthSessionController::class, "store"]);

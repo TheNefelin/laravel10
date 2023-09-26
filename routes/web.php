@@ -34,3 +34,5 @@ Route::resource("blog", PostController::class, [
   "names" => "posts",
   "parameters" => ["blog" => "post"],
 ]);
+
+Route::view("/login", "login")->name("login");

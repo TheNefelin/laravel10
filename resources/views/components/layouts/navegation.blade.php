@@ -1,7 +1,7 @@
 <nav class="shadow-lg">
 	<div class="flex justify-around">
 		<div class="flex items-center flex-shrink-0">
-			<a href="{{ route('home') }}">
+			<a href="{{ route('login') }}">
 				<img src="/logo.svg" alt="Logo" class="h-8">
 			</a>
 		</div>

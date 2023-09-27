@@ -38,7 +38,9 @@ Route::resource("blog", PostController::class, [
 
 
 
-Route::view("/viajes", "viajes.index")->name("viajes.index")->middleware("viajes.index");
+Route::view("/viajes", "viajes.index")->name("viajes.index")->middleware("viajes");
+
+Route::view("/usuarios", "usuarios.index")->name("usuarios");
 
 Route::view("/login", "auth.login")->name("login");
 Route::post("/login", [AuthSessionController::class, "store"]);

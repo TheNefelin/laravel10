@@ -12,21 +12,28 @@
 			<a href="{{ route('posts.index') }}" class="px-3 py-2 text-base font-medium rounded-md hover:text-white hover:bg-slate-400 {{ request()->routeIs('posts.*') ? 'text-sky-600' : 'text-slate-400' }}">
 				Blog
 			</a>
-			<a href="{{ route('viajes.index') }}" class="px-3 py-2 text-base font-medium rounded-md hover:text-white hover:bg-slate-400 {{ false ? 'text-sky-600' : 'text-slate-400' }}">
+			<a href="{{ route('register') }}" class="px-3 py-2 text-base font-medium rounded-md hover:text-white hover:bg-slate-400 {{ false ? 'text-sky-600' : 'text-slate-400' }}">
 				Viajes
 			</a>
 		</div>
 		<div class="flex p-4">
+
       @auth
-      <a href="#" class="px-3 py-2 text-base font-medium rounded-md hover:text-white hover:bg-slate-400 {{ false ? 'text-sky-600' : 'text-slate-400' }}">
-				Cerrar Sesión
-			</a>  
-      @endauth
-      @guest
+      <form action="{{ route('logout') }}" method="POST">
+        @csrf
+        <button 
+          class="px-3 py-2 text-base font-medium rounded-md hover:text-white hover:bg-slate-400 text-slate-400"          
+          type="submit"
+        >Cerrar Sesión</button>
+      </form>
+
+      <span>{{ Auth::user()->name }}</span>
+      @else
       <a href="{{ route('login') }}" class="px-3 py-2 text-base font-medium rounded-md hover:text-white hover:bg-slate-400 {{ request()->routeIs('login') ? 'text-sky-600' : 'text-slate-400' }}">
 				Iniciar Sesión
 			</a>
-      @endguest
+      @endauth
+
 		</div>
 	</div>
 </nav>

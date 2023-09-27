@@ -28,4 +28,13 @@ class AuthSessionController extends Controller
     //redericiona si esta autenticado a la pagina que queria ver
     return redirect()->intended()->with("status", "Te haz logeado correctamente");
   }
+
+  public function destroy(Request $request) {
+    Auth::guard("web")->logout();
+
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+
+    return to_route("login")->with("status", "Sesión Cerrada Correctamente");
+  }
 }

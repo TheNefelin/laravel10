@@ -22,6 +22,7 @@
           {{ $post->nombre }} 
         </a>
 
+        @auth
         <div class="flex p-4 justify-between items-center">
           <a href="{{ route('posts.edit', $post) }}" class="uppercase text-sm font-semibold text-sky-600">Editar</a>
 
@@ -31,6 +32,7 @@
             <button type="submit" class="uppercase text-sm font-semibold text-red-600">Eliminar</button>
           </form>
         </div>
+        @endauth
 			</li>
 		@endforeach
 	</ul>

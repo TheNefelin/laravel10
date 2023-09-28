@@ -1,0 +1,1 @@
+<h1 class="my-4 font-bold text-3xl text-center text-sky-600">{{ $txt }}</h1>

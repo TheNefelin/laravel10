@@ -37,7 +37,7 @@ Route::resource("blog", PostController::class, [
   "parameters" => ["blog" => "post"],
 ]);
 
-Route::view("/viajes", "viajes.index")->name("viajes.index")->middleware("viajes");
+Route::view("/viajes", "viajes.index")->name("viajes");
 
 Route::view("/usuarios", "usuarios.index")->name("usuarios");
 

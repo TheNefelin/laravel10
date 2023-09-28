@@ -6,13 +6,13 @@
 			</a>
 		</div>
 		<div class="flex gap-4 p-4">
-			<a href="{{ route('home') }}" class="px-3 py-2 text-base font-medium rounded-md hover:text-white hover:bg-slate-400 {{ request()->routeIs('home') ? 'text-sky-600' : 'text-slate-400' }}">
-				Inicio
+			<a href="{{ route('register') }}" class="px-3 py-2 text-base font-medium rounded-md hover:text-white hover:bg-slate-400 {{ request()->routeIs('register') ? 'text-sky-600' : 'text-slate-400' }}">
+				Registrar
 			</a>
 			<a href="{{ route('posts.index') }}" class="px-3 py-2 text-base font-medium rounded-md hover:text-white hover:bg-slate-400 {{ request()->routeIs('posts.*') ? 'text-sky-600' : 'text-slate-400' }}">
 				Blog
 			</a>
-			<a href="{{ route('register') }}" class="px-3 py-2 text-base font-medium rounded-md hover:text-white hover:bg-slate-400 {{ false ? 'text-sky-600' : 'text-slate-400' }}">
+			<a href="{{ route('viajes') }}" class="px-3 py-2 text-base font-medium rounded-md hover:text-white hover:bg-slate-400 {{ request()->routeIs('viajes') ? 'text-sky-600' : 'text-slate-400' }}">
 				Viajes
 			</a>
 		</div>

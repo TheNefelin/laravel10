@@ -19,7 +19,7 @@ class AuthSessionController extends Controller
 
     if (!Auth::attempt($creadentials, $request->boolean("remember"))) {
       throw ValidationException::withMessages([
-        "email" => __("auth.failded")
+        "failed" => __("Usuario o Contraseña Incorrecta")
       ]);
     }
 

@@ -10,7 +10,8 @@ class RegisteredUserController extends Controller
 {
   public function store(Request $request) {
     $request->validate([
-      "name" => ["required", "string", "max:255"],
+      "name" => ["required", "string", "max:100"],
+      "surname" => ["required", "string", "max:100"],
       "email" => ["required", "string", "email", "max:255", "unique:users"],
       "password" => ["required", "confirmed", Rules\Password::default()],
     ]);
@@ -19,6 +20,7 @@ class RegisteredUserController extends Controller
 
     User::create([
       "name" => $request->name,
+      "surname" => $request->surname,
       "email" => $request->email,
       "password" => bcrypt($request->password),
     ]);

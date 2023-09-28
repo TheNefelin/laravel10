@@ -5,11 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Viaje extends Model
 {
   use HasFactory;
   protected $fillable = [
-    "nombre", 
-    "apellido"
+    "id_cliente", 
+    "id_conductor",
+    "fecha_ini", 
+    "fecha_fin",
+    "punto_partida", 
+    "punto_llegada",
+    "punto_inicio"
   ];
 }

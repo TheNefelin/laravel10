@@ -1,23 +1,16 @@
 <nav class="shadow-lg bg-white">
-	<div class="flex justify-around">
-		<div class="flex items-center flex-shrink-0">
-			<a href="{{ route('home') }}">
-				<img src="/logo.png" alt="Logo" class="h-8 w-auto">
-			</a>
-		</div>
-		<div class="flex gap-4 p-4">
-			<a href="{{ route('register') }}" class="px-3 py-2 text-base font-medium rounded-md hover:text-white hover:bg-slate-400 {{ request()->routeIs('register') ? 'text-sky-600' : 'text-slate-400' }}">
-				Registrar
-			</a>
-			<a href="{{ route('posts.index') }}" class="px-3 py-2 text-base font-medium rounded-md hover:text-white hover:bg-slate-400 {{ request()->routeIs('posts.*') ? 'text-sky-600' : 'text-slate-400' }}">
-				Blog
-			</a>
-			<a href="{{ route('viajes') }}" class="px-3 py-2 text-base font-medium rounded-md hover:text-white hover:bg-slate-400 {{ request()->routeIs('viajes') ? 'text-sky-600' : 'text-slate-400' }}">
-				Viajes
-			</a>
-		</div>
-		<div class="flex p-4">
+  <div class="flex items-center justify-between p-4">
+    <div class="flex items-center gap-4">
+      <a href="{{ route('home') }}">
+        <img src="/logo.png" alt="Logo" class="h-8 w-auto">
+      </a>
+  
+      @auth
+        <h1 class="text-sky-700 font-bold">{{ Auth::user()->name }}</h1>
+      @endauth
+    </div>
 
+    <span class="flex flex-shrink-0 gap-4">
       @auth
       <form action="{{ route('logout') }}" method="POST">
         @csrf
@@ -27,16 +20,71 @@
         >Cerrar Sesión</button>
       </form>
 
-      <span>{{ Auth::user()->name }}</span>
       @else
       <a href="{{ route('login') }}" class="px-3 py-2 text-base font-medium rounded-md hover:text-white hover:bg-slate-400 {{ request()->routeIs('login') ? 'text-sky-600' : 'text-slate-400' }}">
-				Iniciar Sesión
-			</a>
+        Iniciar Sesión
+      </a>
       @endauth
 
-		</div>
-	</div>
+      <button
+        onclick="handleClick()"
+        class="inline-flex items-center justify-center w-10 h-10 ml-auto bg-sky-700 hover:bg-sky-600 text-white border rounded-md outline-none focus:outline-none"
+        >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </span>
+  </div>    
+
+  <div id="menu" class="bg-sky-700 text-white w-full px-8 py-4 hidden">
+    <ul>
+      <li class="flex font-medium rounded-md hover:bg-sky-600">
+        <a href="{{ route('register') }}" class="w-full px-4 py-2 ">
+          Registrar
+        </a>
+      </li>
+      <li class="flex font-medium rounded-md hover:bg-sky-600">
+        <a href="{{ route('posts.index') }}" class="w-full px-4 py-2">
+          Blog 
+        </a>
+      </li>
+      <li class="flex font-medium rounded-md hover:bg-sky-600">
+        <a href="{{ route('viajes') }}" class="w-full px-4 py-2">
+          Viajes
+        </a>
+      </li>
+      <li class="flex font-medium rounded-md hover:bg-sky-600">
+        <a href="#" class="w-full px-4 py-2">
+          Mantenedores &#8628; 
+        </a>
+      </li>
+      <li class="flex font-medium rounded-md hover:bg-sky-600">
+        <a href="{{ route('test') }}" class="w-full px-4 py-2">
+          Test 
+        </a>
+      </li>
+
+    </ul>
+  </div>
 </nav>
+
+<script>
+  const handleClick = () => {
+    const menu = document.querySelector("#menu");
+    menu.classList.toggle("hidden")
+  }
+</script>
 
 {{-- <nav>
   <ul>

@@ -48,3 +48,5 @@ Route::post("/logout", [AuthSessionController::class, "destroy"])->name("logout"
 
 Route::view("/register", "auth.register")->name("register");
 Route::post("/register", [RegisteredUserController::class, "store"])->name("register");
+
+Route::view("/test", "components.test")->name("test");

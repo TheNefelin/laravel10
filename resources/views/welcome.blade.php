@@ -13,6 +13,8 @@
     height="500px"
   ></iframe>
 
+  <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=40.7127837,-74.0059413&destination=42.3600825,-71.05888&key=..." allowfullscreen></iframe>
+  
 </x-layouts.app>
 
 

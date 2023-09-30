@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body::-webkit-scrollbar{
+  display: none;
+}
+
 .txt_p {
   padding-left: 1rem;
 }

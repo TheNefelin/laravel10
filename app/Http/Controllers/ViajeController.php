@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class ViajeController extends Controller
 {
+  public function __construct()
+  {
+    // $this->middleware("auth", ["only" => []]);
+    // $this->middleware("auth", ["except" => []]);
+  }
+
   public function index(){
     return "index";
   }
@@ -16,12 +22,14 @@ class ViajeController extends Controller
     return $viaje;
   }
 
-  public function create(SaveViajeRequest $request) {
-    return view("viajes.index", ["post" => new Viaje]);
+  public function create() {
+    return view("viajes.create", ["post" => new Viaje]);
   }
 
-  public function store(){
-    return "RequestSave";
+  public function store(SaveViajeRequest $request) {
+    Viaje::create($request->validated());
+    return $request;
+    return to_route("viajes.index")->with("status", "Datos Guardado Correctamente");
   }
 
   public function edit(Viaje $viaje) {

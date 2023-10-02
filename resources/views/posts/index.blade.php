@@ -1,6 +1,6 @@
 <x-layouts.app title="Blog" meta_description="Meta Blog Index">
 
-  <h1 class="my-4 font-bold text-3xl text-center text-sky-600">Solicitar Viaje</h1>
+  <h1 class="my-4 font-bold text-3xl text-center text-sky-600">Post</h1>
 	{{-- @dump($posts->toArray()) --}}
 
   <div class="flex justify-end px-4">

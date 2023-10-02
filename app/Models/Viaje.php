@@ -13,6 +13,6 @@ class Viaje extends Model
     "fecha_ini",
     "fecha_fin",
     "dir_partida",
-    "dir_destino"
+    "dir_destino",
   ];
 }

@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('viajes', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            // $table->integer("id_cliente");
-            // $table->integer("id_conductor");
             $table->string("conductor");
             $table->dateTime("fecha_ini");
             $table->dateTime("fecha_fin")->nullable();

@@ -60,7 +60,7 @@
         </a>
       </li>
       <li class="flex font-medium rounded-md hover:bg-sky-600">
-        <a href="{{ route('viajes') }}" class="w-full px-4 py-2">
+        <a href="{{ route('viajes.index') }}" class="w-full px-4 py-2">
           Viajes
         </a>
       </li>

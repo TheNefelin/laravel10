@@ -8,27 +8,27 @@ use Illuminate\Http\Request;
 
 class ViajeController extends Controller
 {
-  public function __construct()
-  {
-    // $this->middleware("auth", ["only" => []]);
+  public function __construct(){
+    $this->middleware("auth", ["only" => []]);
     // $this->middleware("auth", ["except" => []]);
   }
 
   public function index(){
-    return "index";
+    $viajes = Viaje::get();
+    return view("viajes.index", ["viajes" => $viajes]);
   }
 
   public function show(Viaje $viaje) {
-    return $viaje;
+    return  view("viajes.show", ["viaje" => $viaje]);
   }
 
   public function create() {
-    return view("viajes.create", ["post" => new Viaje]);
+    return view("viajes.create", ["viaje" => new Viaje]);
   }
 
   public function store(SaveViajeRequest $request) {
     Viaje::create($request->validated());
-    return $request;
+
     return to_route("viajes.index")->with("status", "Datos Guardado Correctamente");
   }
 
@@ -36,11 +36,12 @@ class ViajeController extends Controller
     return $viaje;
   }
 
-  public function update(SaveViajeRequest $request, Viaje $post) {
-    return $post;
+  public function update(SaveViajeRequest $request, Viaje $viaje) {
+    return $viaje;
   }
 
-  public function destroy(Viaje $post) {
-    return $post;
+  public function destroy(Viaje $viaje) {
+    $viaje->delete();
+    return to_route("viajes.index")->with("status", "Datos Eliminados Correctamente");
   }
 }

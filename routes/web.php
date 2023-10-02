@@ -38,8 +38,12 @@ Route::resource("blog", PostController::class, [
   "parameters" => ["blog" => "post"],
 ]);
 
-Route::view("/viajes", "viajes.index")->name("viajes");
+// Ruta, ObjDato, ObjClase o View, funcion, nombre
+Route::get("/viajes", [ViajeController::class, "index"])->name("viajes.index");
 Route::get("/viajes/create", [ViajeController::class, "create"])->name("viajes.create"); 
+Route::post("/viajes", [ViajeController::class, "store"])->name("viajes.store");
+Route::get("/viajes/{viaje}", [ViajeController::class, "show"])->name("viajes.show");
+Route::delete("/viajes/{viaje}", [ViajeController::class, "destroy"])->name("viajes.destroy");
 
 Route::view("/usuarios", "usuarios.index")->name("usuarios");
 

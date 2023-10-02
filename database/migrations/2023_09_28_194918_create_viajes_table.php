@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('viajes', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->integer("id_cliente");
-            $table->integer("id_conductor");
+            // $table->integer("id_cliente");
+            // $table->integer("id_conductor");
+            $table->string("conductor");
             $table->dateTime("fecha_ini");
             $table->dateTime("fecha_fin")->nullable();
-            $table->string("punto_partida");
-            $table->string("punto_llegada")->nullable();
-            $table->string("punto_inicio")->nullable();
+            $table->string("dir_partida");
+            $table->string("dir_destino");
             $table->timestamps();
         });
     }

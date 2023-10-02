@@ -22,13 +22,13 @@ class SaveViajeRequest extends FormRequest
   public function rules(): array
   {
     return [
-      "id_cliente" => ["required", "integer"],
-      "id_conductor" => ["required", "integer"],
+      // "id_cliente" => ["required", "integer"],
+      // "id_conductor" => ["required", "integer"],
+      "conductor" => ["required", "string"],
       "fecha_ini" => ["required", "date"],
       "fecha_fin" => ["date"],
-      "punto_partida" => ["required", "string"],
-      "punto_llegada" => ["string"],
-      "punto_inicio" => ["string"],
+      "dir_partida" => ["required", "string"],
+      "dir_destino" => ["string"],
     ];
   }
 }

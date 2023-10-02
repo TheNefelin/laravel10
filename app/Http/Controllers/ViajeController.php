@@ -17,8 +17,7 @@ class ViajeController extends Controller
   }
 
   public function create(SaveViajeRequest $request) {
-    $viaje = new Viaje;
-    return $viaje;
+    return view("viajes.index", ["post" => new Viaje]);
   }
 
   public function store(){

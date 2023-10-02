@@ -38,7 +38,7 @@ Route::resource("blog", PostController::class, [
 ]);
 
 Route::view("/viajes", "viajes.index")->name("viajes");
-// Route::view("/viajes", "viajes.index")->name("store");
+Route::view("/viajes/create", "viajes.create")->name("viajes.create");
 
 Route::view("/usuarios", "usuarios.index")->name("usuarios");
 

@@ -2,19 +2,27 @@
 
   <h1 class="my-4 font-bold text-3xl text-center text-sky-600 dark:text-sky-500">Inicio</h1>
   
-  <input type="text" name="" id="" placeholder="latitud">
-  <input type="text" name="" id="" placeholder="longitud">
-  <button type="submit">Enviar</button>
+  <section>
+    <div class=" absolute pl-4 pt-0">
+      <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm bg-white px-4 py-6 m-4 rounded-md shadow-lg">
+        <form action="" class="space-y-4">
   
-  <iframe 
-    src="https://maps.google.com/maps?q=-33.036,-71.62963&output=embed" 
-    frameborder="0"
-    width="100%"
-    height="500px"
-  ></iframe>
+          @include("components.input", ["id" => "latitud", "type" => "text", "value" => "", "txt" => "Latitud"])
+          @include("components.input", ["id" => "longitud", "type" => "text", "value" => "", "txt" => "Longitud"])
+          @include("components.btn_submit", ["txt" => "Calcular Viaje"])
+          
+        </form>
+      </div>
+    </div>
+  
+    <iframe 
+      src="https://maps.google.com/maps?q=-33.036,-71.62963&output=embed" 
+      frameborder="0"
+      width="100%"
+      height="500px"
+    ></iframe>
+  </section>
 
-  <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=40.7127837,-74.0059413&destination=42.3600825,-71.05888&key=..." allowfullscreen></iframe>
-  
 </x-layouts.app>
 
 

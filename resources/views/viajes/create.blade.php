@@ -8,11 +8,11 @@
       <form action="{{ route('viajes.store') }}" method="POST" class="space-y-4">
         @csrf
 
-        @include("components.input", ["txt" => "Conductor", "type" => "text", "id" => "conductor"])
-        @include("components.input", ["txt" => "Fecha Inicio", "type" => "datetime-local", "id" => "fecha_ini"])
-        @include("components.input", ["txt" => "Fecha Termino", "type" => "datetime-local", "id" => "fecha_fin"])
-        @include("components.input", ["txt" => "Direccion de Partida", "type" => "text", "id" => "dir_partida"])
-        @include("components.input", ["txt" => "Direccion de Destino", "type" => "text", "id" => "dir_destino"])
+        @include("components.input", ["txt" => "Conductor", "type" => "text", "id" => "conductor", "value" => ""])
+        @include("components.input", ["txt" => "Fecha Inicio", "type" => "datetime-local", "id" => "fecha_ini", "value" => ""])
+        @include("components.input", ["txt" => "Fecha Termino", "type" => "datetime-local", "id" => "fecha_fin", "value" => ""])
+        @include("components.input", ["txt" => "Direccion de Partida", "type" => "text", "id" => "dir_partida", "value" => ""])
+        @include("components.input", ["txt" => "Direccion de Destino", "type" => "text", "id" => "dir_destino", "value" => ""])
         
         @include("components.btn_submit", ["txt" => "Solicitar Viaje"])
         @include("components.link", ["txt" => "Regresar", "route" => "viajes.index"])

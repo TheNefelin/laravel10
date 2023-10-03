@@ -8,11 +8,11 @@
       <form action="{{ route('register') }}" method="POST" class="space-y-4">
         @csrf
       
-        @include("components.input", ["id" => "name", "type" => "text", "txt" => "Nombre"])
-        @include("components.input", ["id" => "surname", "type" => "text", "txt" => "Apellido"])
-        @include("components.input", ["id" => "email", "type" => "email", "txt" => "Correo"])
-        @include("components.input", ["id" => "password", "type" => "password", "txt" => "Contraseña"])
-        @include("components.input", ["id" => "password_confirmation", "type" => "password", "txt" => "Confirmar Contraseña"])
+        @include("components.input", ["id" => "name", "type" => "text", "txt" => "Nombre", "value" => ""])
+        @include("components.input", ["id" => "surname", "type" => "text", "txt" => "Apellido", "value" => ""])
+        @include("components.input", ["id" => "email", "type" => "email", "txt" => "Correo", "value" => ""])
+        @include("components.input", ["id" => "password", "type" => "password", "txt" => "Contraseña", "value" => ""])
+        @include("components.input", ["id" => "password_confirmation", "type" => "password", "txt" => "Confirmar Contraseña", "value" => ""])
       
         <div class="pt-4">
           @include("components.btn_submit", ["txt" => "Crear Usuario"])

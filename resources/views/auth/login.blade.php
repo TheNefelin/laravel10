@@ -8,8 +8,8 @@
       <form action="{{ route('login') }}" method="POST" class="space-y-4">
         @csrf
 
-        @include("components.input", ["id" => "email", "type" => "email", "txt" => "Correo"])
-        @include("components.input", ["id" => "password", "type" => "password", "txt" => "Contraseña"])
+        @include("components.input", ["id" => "email", "type" => "email", "txt" => "Correo", "value" => ""])
+        @include("components.input", ["id" => "password", "type" => "password", "txt" => "Contraseña", "value" => ""])
   
         @error('failed')
         <small class=" text-red-600">{{ $message }}</small>

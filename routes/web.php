@@ -33,10 +33,10 @@ Route::view("/", "welcome")->name("home");
 
 // Route::resource("posts", PostController::class);
 
-Route::resource("blog", PostController::class, [
-  "names" => "posts",
-  "parameters" => ["blog" => "post"],
-]);
+// Route::resource("blog", PostController::class, [
+//   "names" => "posts",
+//   "parameters" => ["blog" => "post"],
+// ]);
 
 // Ruta, ObjDato, ObjClase o View, funcion, nombre
 Route::get("/viajes", [ViajeController::class, "index"])->name("viajes.index");

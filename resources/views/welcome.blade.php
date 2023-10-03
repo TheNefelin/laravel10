@@ -21,6 +21,25 @@
       width="100%"
       height="500px"
     ></iframe>
+
+    <iframe
+      width="450"
+      height="250"
+      frameborder="0" style="border:0"
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBl6eTg57zgqjCcoCIJFMaaE3038aAUQIA&q=Eiffel+Tower,Paris+France"
+      allowfullscreen>
+    </iframe>
+
+    <iframe
+      width="450"
+      height="250"
+      frameborder="0" style="border:0"
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyBl6eTg57zgqjCcoCIJFMaaE3038aAUQIA&origin=Oslo+Norway&destination=Telemark+Norway&avoid=tolls|highways"
+      allowfullscreen>
+    </iframe>
+
   </section>
 
 </x-layouts.app>

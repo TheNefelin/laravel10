@@ -28,7 +28,6 @@ class ViajeController extends Controller
 
   public function store(SaveViajeRequest $request) {
     Viaje::create($request->validated());
-
     return to_route("viajes.index")->with("status", "Datos Guardado Correctamente");
   }
 
@@ -37,7 +36,8 @@ class ViajeController extends Controller
   }
 
   public function update(SaveViajeRequest $request, Viaje $viaje) {
-    return $viaje;
+    $viaje->update($request->validated());
+    return to_route("viajes.show", $viaje)->with("status", "Datos Modificados Correctamente");
   }
 
   public function destroy(Viaje $viaje) {

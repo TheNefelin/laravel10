@@ -44,6 +44,7 @@ Route::get("/viajes/create", [ViajeController::class, "create"])->name("viajes.c
 Route::post("/viajes", [ViajeController::class, "store"])->name("viajes.store");
 Route::get("/viajes/{viaje}", [ViajeController::class, "show"])->name("viajes.show");
 Route::get("/viajes/{viaje}/edit", [ViajeController::class, "edit"])->name("viajes.edit");
+Route::patch("/viajes/{viaje}", [ViajeController::class, "update"])->name("viajes.update");
 Route::delete("/viajes/{viaje}", [ViajeController::class, "destroy"])->name("viajes.destroy");
 
 Route::view("/login", "auth.login")->name("login");

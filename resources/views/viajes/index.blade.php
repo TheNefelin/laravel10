@@ -9,6 +9,4 @@
 
   @include("viajes.form")
 
-
-
 </x-layouts.app>

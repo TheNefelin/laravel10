@@ -3,7 +3,7 @@
   <h1>Edit Form</h1>
   @dump($post->toArray())
 
-   <form action="{{ route('posts.update', $post) }}" method="POST">
+  <form action="{{ route('posts.update', $post) }}" method="POST">
     @csrf @method("PATCH")
     @include("posts.form")
 

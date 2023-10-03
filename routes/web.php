@@ -43,9 +43,8 @@ Route::get("/viajes", [ViajeController::class, "index"])->name("viajes.index");
 Route::get("/viajes/create", [ViajeController::class, "create"])->name("viajes.create"); 
 Route::post("/viajes", [ViajeController::class, "store"])->name("viajes.store");
 Route::get("/viajes/{viaje}", [ViajeController::class, "show"])->name("viajes.show");
+Route::get("/viajes/{viaje}/edit", [ViajeController::class, "edit"])->name("viajes.edit");
 Route::delete("/viajes/{viaje}", [ViajeController::class, "destroy"])->name("viajes.destroy");
-
-Route::view("/usuarios", "usuarios.index")->name("usuarios");
 
 Route::view("/login", "auth.login")->name("login");
 Route::post("/login", [AuthSessionController::class, "store"]);
@@ -53,5 +52,3 @@ Route::post("/logout", [AuthSessionController::class, "destroy"])->name("logout"
 
 Route::view("/register", "auth.register")->name("register");
 Route::post("/register", [RegisteredUserController::class, "store"])->name("register");
-
-Route::view("/test", "components.test")->name("test");

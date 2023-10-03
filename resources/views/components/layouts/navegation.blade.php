@@ -27,7 +27,7 @@
       @endauth
 
       <button
-        onclick="handleClick()"
+        onclick="handleBurgerClick()"
         class="inline-flex items-center justify-center w-10 h-10 ml-auto bg-sky-700 hover:bg-sky-600 text-white border rounded-md outline-none focus:outline-none"
         >
         <svg
@@ -64,23 +64,12 @@
           Viajes
         </a>
       </li>
-      <li class="flex font-medium rounded-md hover:bg-sky-600">
-        <a href="#" class="w-full px-4 py-2">
-          Mantenedores &#8628; 
-        </a>
-      </li>
-      <li class="flex font-medium rounded-md hover:bg-sky-600">
-        <a href="{{ route('test') }}" class="w-full px-4 py-2">
-          Test 
-        </a>
-      </li>
-
     </ul>
   </div>
 </nav>
 
 <script>
-  const handleClick = () => {
+  const handleBurgerClick = () => {
     const menu = document.querySelector("#menu");
     menu.classList.toggle("hidden")
   }

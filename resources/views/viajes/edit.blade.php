@@ -7,6 +7,7 @@
 
       <form action="{{ route('viajes.store') }}" method="POST" class="space-y-4">
         @csrf
+        @method("PATCH")
 
         @include("components.input", ["txt" => "Conductor", "type" => "text", "id" => "conductor"])
         @include("components.input", ["txt" => "Fecha Inicio", "type" => "datetime-local", "id" => "fecha_ini"])

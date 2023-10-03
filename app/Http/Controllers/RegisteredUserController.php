@@ -25,6 +25,6 @@ class RegisteredUserController extends Controller
       "password" => bcrypt($request->password),
     ]);
 
-    return to_route("login")->with("status", "Inicia Sesión Porfavor");
+    return to_route("login")->with("status", "La Cuenta ha Sido Registrada Correctamente");
   }
 }

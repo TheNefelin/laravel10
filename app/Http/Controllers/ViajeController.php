@@ -33,7 +33,7 @@ class ViajeController extends Controller
   }
 
   public function edit(Viaje $viaje) {
-    return $viaje;
+    return  view("viajes.edit", ["viaje" => $viaje]);
   }
 
   public function update(SaveViajeRequest $request, Viaje $viaje) {

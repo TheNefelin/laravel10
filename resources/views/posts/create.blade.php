@@ -12,4 +12,5 @@
   </form>
 
   <a href="{{ route('posts.index') }}">Regresar</a>
+  
 </x-layouts.app>

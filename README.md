@@ -17,6 +17,7 @@
 - Folder: database -> migrations
 - Folder: resources -> views
 - Folder: resources -> routes
+- Start proyect with Laragon app
 
 # ORM Elocuent 
 

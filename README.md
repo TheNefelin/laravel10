@@ -70,6 +70,12 @@ npm run dev
 - Folder: node_modules
 - Add @vite(['resources/css/app.css', 'resources/js/app.js']) to Layout in views
 
+### Update Dependencies
+```
+npm update
+npm install
+```
+
 <hr>
 
 # Laravel Docs.
